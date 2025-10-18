@@ -1,0 +1,6 @@
+go to jinai website
+login with your smail
+go to api and billing section
+copy your token from the dashboard
+replace the token in the script file
+replace your image path and text and run the script.py
