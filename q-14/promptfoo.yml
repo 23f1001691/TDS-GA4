@@ -1,0 +1,31 @@
+providers:
+  - id: openrouter:openai/gpt-4o-mini
+    config:
+      max_tokens: 1024
+  - id: openrouter:openai/gpt-4.1-nano
+    config:
+      max_tokens: 1024
+  - id: openrouter:google/gemini-2.0-flash-lite-001
+
+prompts:
+  - "Generate a curl command that fetches ONLY the top 17 most-starred repositories from the \"adobe\" organization using the GitHub API. Use $API_KEY as a placeholder for the API key."
+
+tests:
+  - assert:
+      type: contains
+      value: "https://api.github.com/orgs/adobe/repos"
+  - assert:
+      type: contains
+      value: "per_page=17"
+  - assert:
+      type: contains
+      value: "sort=stars"
+  - assert:
+      type: contains
+      value: "direction=desc"
+  - assert:
+      type: contains
+      value: "Authorization: Bearer $API_KEY"
+  - assert:
+      type: llm-rubric
+      rubric: "Does the response provide a correct curl command that fetches exactly 17 repositories from the adobe organization, sorted by stars in descending order, with proper authorization?"

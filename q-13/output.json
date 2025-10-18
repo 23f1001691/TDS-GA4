@@ -1,0 +1,7 @@
+{
+  "model": "tts-1-hd",
+  "voice": "nova",
+  "input": "Hello, this is a demonstration of text-to-speech technology for 23f1001691@ds.study.iitm.ac.in's project.",
+  "speed": 1.6,
+  "response_format": "flac"
+}

@@ -1,0 +1,4 @@
+- install dependencies
+- enter your aipipe api token
+- run:  uvicorn main:app --reload
+- next run: python test.py
